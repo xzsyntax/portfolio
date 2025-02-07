@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title data-translate="page-title">Serkan - Portföy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <div class="logo">
+                <a href="#hero">Serkan</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hakkimda" onclick="scrollToSection('hakkimda')" data-translate="nav-about">Hakkımda</a></li>
+                <li><a href="#yetenekler" onclick="scrollToSection('yetenekler')" data-translate="nav-skills">Yetenekler</a></li>
+                <li><a href="#deneyim" onclick="scrollToSection('deneyim')" data-translate="nav-experience">Deneyim</a></li>
+                <li><a href="#iletisim" onclick="scrollToSection('iletisim')" data-translate="nav-contact">İletişim</a></li>
+                <li><button id="languageToggle" onclick="toggleLanguage()">EN</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="animate-text" data-translate="hero-title">Merhaba, Ben Serkan</h1>
+                <p class="animate-text-delay" data-translate="hero-subtitle">Web Geliştirici & Grafik Tasarımcı</p>
+            </div>
+            <div class="hero-buttons">
+                <a href="#iletisim" class="hero-button primary" data-translate="hero-contact">Benimle İletişime Geç</a>
+                <a href="#hakkimda" class="hero-button secondary" data-translate="hero-about">Hakkımda</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="hakkimda">
+        <div class="container">
+            <h2 data-translate="about-title">Hakkımda</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="highlight" data-translate="about-highlight">Teknoloji tutkunu bir Web Geliştirici ve geleceğin Siber Güvenlik Uzmanı.</p>
+                    
+                    <p data-translate="about-p1">Ankara'da doğup büyüdüm ve küçük yaşlardan beri teknolojiye olan tutkum hiç eksilmedi. Ortaokul yıllarından bu yana dijital dünyada kendimi geliştirmeye odaklandım. Grafik tasarımla başlayan yolculuğum, zamanla web geliştirme, makale yazarlığı ve site çevirmenliği gibi farklı alanlara yayıldı.</p>
+
+                    <p data-translate="about-p2">Şu anda aktif olarak <span class="highlight-text">Full Stack Web Developer</span> olarak çalışıyorum ve aynı zamanda <span class="highlight-text">Siber Güvenlik</span> alanında kendimi geliştiriyorum. 2025 hedeflerim arasında güvenlik açıklarını tespit etme ve önleme konusunda uzmanlaşmak var.</p>
+
+                    <div class="collaboration-box">
+                        <h3 data-translate="about-collab-title">Neden Birlikte Çalışmalıyız?</h3>
+                        <ul>
+                            <li data-translate="about-collab-1">✨ Modern ve güvenli web uygulamaları geliştirme deneyimi</li>
+                            <li data-translate="about-collab-2">🚀 Hızlı öğrenme ve adapte olma yeteneği</li>
+                            <li data-translate="about-collab-3">🔒 Güvenlik odaklı geliştirme yaklaşımı</li>
+                            <li data-translate="about-collab-4">🎯 Detaylara özen gösteren çalışma prensibi</li>
+                            <li data-translate="about-collab-5">🤝 Güçlü iletişim ve işbirliği becerileri</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="yetenekler">
+        <div class="container">
+            <h2 data-translate="skills-title">Yetenekler</h2>
+            <div class="skill-bars">
+                <div class="skill">
+                    <div class="skill-info">
+                        <span data-translate="skill-web">Web Geliştirme</span>
+                        <span>4 <span data-translate="years">Yıl</span></span>
+                    </div>
+                    <div class="progress-bar" style="--width: 90%"></div>
+                </div>
+                <div class="skill">
+                    <div class="skill-info">
+                        <span data-translate="skill-article">Makale Yazarlığı</span>
+                        <span>2 <span data-translate="years">Yıl</span></span>
+                    </div>
+                    <div class="progress-bar" style="--width: 75%"></div>
+                </div>
+                <div class="skill">
+                    <div class="skill-info">
+                        <span data-translate="skill-design">Grafik Tasarım</span>
+                        <span>1.5 <span data-translate="years">Yıl</span></span>
+                    </div>
+                    <div class="progress-bar" style="--width: 65%"></div>
+                </div>
+                <div class="skill">
+                    <div class="skill-info">
+                        <span data-translate="skill-translation">Site Çevirmenliği</span>
+                        <span>1 <span data-translate="year">Yıl</span></span>
+                    </div>
+                    <div class="progress-bar" style="--width: 60%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience" id="deneyim">
+        <div class="container">
+            <h2 data-translate="exp-title">Deneyimlerim</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 data-translate="exp-web-title">Web Developer</h3>
+                        <span class="date">4 <span data-translate="years">Yıl</span></span>
+                        <p data-translate="exp-web-desc">Full stack web geliştirme alanında modern teknolojiler kullanarak projeler geliştirdim.</p>
+                        
+                        <!-- Projeler Grid'i -->
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="./assets/kronometre.png" alt="Kronometre Projesi">
+                                </div>
+                                <div class="project-info">
+                                    <h4>Kronometre Uygulaması</h4>
+                                    <p>Modern ve kullanıcı dostu bir kronometre web uygulaması</p>
+                                    <div class="project-tags">
+                                        <span>HTML</span>
+                                        <span>CSS</span>
+                                        <span>JavaScript</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="./assets/eticaret.png" alt="E-ticaret Projesi">
+                                </div>
+                                <div class="project-info">
+                                    <h4>ModernShop E-ticaret</h4>
+                                    <p>Modern tasarıma sahip kapsamlı e-ticaret platformu</p>
+                                    <div class="project-tags">
+                                        <span>React</span>
+                                        <span>Node.js</span>
+                                        <span>MongoDB</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 data-translate="exp-article-title">Makale Yazarı</h3>
+                        <span class="date">2 <span data-translate="years">Yıl</span></span>
+                        <p data-translate="exp-article-desc">Teknoloji ve yazılım alanında bilgilendirici makaleler yazarak içerik ürettim.</p>
+                        
+                        <!-- Makale Kartı -->
+                        <div class="article-showcase">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="./assets/makale.png" alt="Medium Blog">
+                                </div>
+                                <div class="project-info">
+                                    <h4>Tech Blog</h4>
+                                    <p>Siber güvenlik ve web teknolojileri üzerine makaleler</p>
+                                    <div class="project-tags">
+                                        <span>Siber Güvenlik</span>
+                                        <span>Web Geliştirme</span>
+                                        <span>Teknoloji</span>
+                                    </div>
+                                    <button onclick="window.open('https://medium.com/@serkanmeteoglu', '_blank')" class="view-button">
+                                        Makaleleri Görüntüle
+                                        <i class="fas fa-arrow-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 data-translate="exp-design-title">Grafik Tasarımcı</h3>
+                        <span class="date">1.5 <span data-translate="years">Yıl</span></span>
+                        <p data-translate="exp-design-desc">Modern ve yaratıcı tasarımlar oluşturarak markaların görsel kimliklerine katkıda bulundum.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 data-translate="exp-trans-title">Site Çevirmeni</h3>
+                        <span class="date">1 <span data-translate="year">Yıl</span></span>
+                        <p data-translate="exp-trans-desc">Uluslararası web sitelerinin yerelleştirme çalışmalarını gerçekleştirdim.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="iletisim">
+        <div class="container">
+            <h2 data-translate="contact-title">İletişim</h2>
+            <form action="contact.php" method="POST" autocomplete="off">
+                <div class="form-group">
+                    <input type="text" name="name" class="form-control" data-translate="contact-name" placeholder="Adınız" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" data-translate="contact-email" placeholder="E-posta Adresiniz" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" class="form-control" data-translate="contact-message" placeholder="Mesajınız" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" data-translate="contact-send">Gönder</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Serkan. <span data-translate="footer-rights">Tüm hakları saklıdır.</span></p>
+                <div class="social-links">
+                    <a href="https://github.com/xzsyntax" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/serkanmeteoglu" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://medium.com/@serkanmeteoglu" target="_blank"><i class="fab fa-medium"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="language.js"></script>
+</body>
+</html> 

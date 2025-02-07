@@ -1,0 +1,14 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .letter { 
+            font: bold 16px 'Segoe UI', sans-serif; 
+            fill: #f6b17a; 
+            dominant-baseline: middle;
+        }
+        @media (prefers-color-scheme: dark) {
+            .letter { fill: #f6b17a; }
+        }
+    </style>
+    <rect width="32" height="32" rx="6" fill="#2d3250"/>
+    <text x="16" y="16" text-anchor="middle" class="letter">SM</text>
+</svg> 

@@ -1,0 +1,1093 @@
+:root {
+    /* Ana Renkler */
+    --primary-color: #2d3250;      /* Koyu Lacivert */
+    --secondary-color: #424769;    /* Orta Lacivert */
+    --accent-color: #7077A1;       /* Lavanta */
+    --highlight-color: #f6b17a;    /* Turuncu Highlight */
+    
+    /* Arka Plan ve Yüzey Renkleri */
+    --background-color: #1c1c2c;   /* Çok Koyu Lacivert */
+    --surface-color: #2d2d3f;      /* Koyu Lacivert */
+    
+    /* Metin Renkleri */
+    --text-color: #e2e8f0;         /* Açık Gri */
+    --text-color-light: #9ca3af;   /* Orta Gri */
+    
+    /* Diğer Renkler */
+    --success-color: #4ade80;      /* Yeşil */
+    --error-color: #f87171;        /* Kırmızı */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+}
+
+.container {
+    max-width: 1000px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+nav {
+    background: var(--primary-color);
+    border-bottom: 1px solid rgba(112, 119, 161, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color-light);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--highlight-color);
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--highlight-color);
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+    animation: textGlow 3s infinite;
+}
+
+.logo a::after {
+    display: none;
+}
+
+/* Hero Section Güncelleme */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(99, 102, 241, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-text {
+    margin-bottom: 40px;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    color: #cbd5e1;
+    margin-bottom: 30px;
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.hero-button:hover::before {
+    transform: translateX(0);
+}
+
+.hero-button.primary {
+    background: var(--highlight-color);
+    color: var(--primary-color);
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(246, 177, 122, 0.3);
+}
+
+.hero-button.primary:hover {
+    background: #e5a169;
+    box-shadow: 0 6px 20px rgba(246, 177, 122, 0.4);
+}
+
+.hero-button.secondary {
+    border: 2px solid var(--accent-color);
+    color: var(--text-color);
+}
+
+.hero-button.secondary:hover {
+    background: rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Yetenekler Bölümü */
+.skills {
+    background: var(--surface-color);
+    padding: 4rem 0;
+}
+
+.skills h2 {
+    color: var(--text-color);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.skill-bars {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.skill {
+    background: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--accent-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    color: var(--text-color);
+}
+
+.skill-info span {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.progress-bar {
+    height: 8px;
+    background: rgba(112, 119, 161, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--accent-color), var(--highlight-color));
+    animation: fillProgress 1.5s ease-out forwards;
+}
+
+.skill:nth-child(1) .progress-bar::after {
+    width: 90%;
+}
+
+.skill:nth-child(2) .progress-bar::after {
+    width: 75%;
+}
+
+.skill:nth-child(3) .progress-bar::after {
+    width: 65%;
+}
+
+.skill:nth-child(4) .progress-bar::after {
+    width: 60%;
+}
+
+@keyframes fillProgress {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Responsive düzenlemeler */
+@media (max-width: 768px) {
+    .skills h2 {
+        font-size: 2rem;
+    }
+    
+    .skill {
+        padding: 1rem;
+    }
+    
+    .skill-info span {
+        font-size: 1rem;
+    }
+}
+
+/* İletişim formu için stil güncellemeleri */
+.contact .form-group {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 500px; /* Form genişliğini sınırla */
+}
+
+.contact .form-control {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.contact textarea.form-control {
+    min-height: 150px; /* Mesaj kutusu için minimum yükseklik */
+    resize: vertical; /* Sadece dikey boyutlandırmaya izin ver */
+}
+
+.contact .form-control:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact .btn-primary {
+    padding: 12px 30px;
+    font-size: 16px;
+    width: auto;
+    min-width: 150px;
+    background: linear-gradient(135deg, #2a2d3e 0%, #323648 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.contact .btn-primary:hover {
+    background: linear-gradient(135deg, #323648 0%, #2a2d3e 100%);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact .btn-primary:active {
+    transform: translateY(0);
+}
+
+.about {
+    padding: 6rem 0;
+    background: var(--surface-color);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--highlight-color);
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.highlight {
+    font-size: 1.4rem;
+    color: var(--highlight-color);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.highlight-text {
+    color: var(--highlight-color);
+    font-weight: 600;
+}
+
+.collaboration-box {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.collaboration-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.collaboration-box h3 {
+    color: var(--highlight-color);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.collaboration-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.collaboration-box li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.collaboration-box li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--highlight-color);
+    border-radius: 50%;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.2); }
+    50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
+    100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.2); }
+}
+
+.collaboration-box {
+    animation: glow 3s infinite;
+}
+
+/* Deneyim Timeline Stilleri */
+.experience {
+    padding: 6rem 0;
+    background: var(--surface-color);
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    display: none;
+}
+
+.timeline-item {
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.timeline-content {
+    background: rgba(99, 102, 241, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    margin-left: 0;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.timeline-content h3 {
+    color: var(--highlight-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content .date {
+    color: var(--text-color-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.timeline-content::before {
+    display: none;
+}
+
+/* Glow Efektleri Güncelleme */
+@keyframes textGlow {
+    0% { text-shadow: 0 0 3px rgba(246, 177, 122, 0.3); }
+    50% { text-shadow: 0 0 8px rgba(246, 177, 122, 0.5); }
+    100% { text-shadow: 0 0 3px rgba(246, 177, 122, 0.3); }
+}
+
+.collaboration-box {
+    animation: textGlow 3s infinite;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #666;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #333;
+}
+
+/* Mobil için düzenleme */
+@media screen and (max-width: 576px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+#languageToggle {
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--text-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+#languageToggle:hover {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    transform: scale(1.05);
+}
+
+#languageToggle:active {
+    transform: scale(0.95);
+}
+
+/* Responsive Tasarım Güncellemeleri */
+@media screen and (max-width: 992px) {
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .about-content, .skill-bars {
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Navigation */
+    .nav-content {
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--primary-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        transition: 0.3s ease;
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+    
+    /* Hamburger Menü */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: var(--text-color);
+        margin: 5px 0;
+        transition: 0.3s ease;
+    }
+    
+    /* Hero Section */
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-button {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* About Section */
+    .about {
+        padding: 4rem 0;
+    }
+    
+    .about h2 {
+        font-size: 2rem;
+    }
+    
+    .highlight {
+        font-size: 1.2rem;
+    }
+    
+    /* Skills Section */
+    .skills h2 {
+        font-size: 2rem;
+    }
+    
+    .skill {
+        margin-bottom: 1rem;
+    }
+    
+    /* Experience Section */
+    .timeline-content {
+        padding: 1rem;
+    }
+    
+    /* Contact Form */
+    .contact form {
+        padding: 0 15px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+    }
+    
+    .about-text p {
+        font-size: 1rem;
+    }
+    
+    .collaboration-box {
+        padding: 1.5rem;
+    }
+    
+    .collaboration-box li {
+        font-size: 0.9rem;
+    }
+    
+    .skill-info span {
+        font-size: 0.9rem;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .contact .form-control {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Proje Grid Stilleri */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: rgba(45, 50, 80, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(112, 119, 161, 0.2);
+    position: relative;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--highlight-color);
+}
+
+.project-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: 1.5rem;
+    background: linear-gradient(
+        to bottom,
+        rgba(45, 50, 80, 0.8),
+        rgba(45, 50, 80, 0.95)
+    );
+}
+
+.project-info h4 {
+    color: var(--highlight-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.project-info p {
+    color: var(--text-color-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-tags span {
+    background: rgba(246, 177, 122, 0.1);
+    color: var(--highlight-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(246, 177, 122, 0.2);
+    transition: all 0.3s ease;
+}
+
+.project-tags span:hover {
+    background: rgba(246, 177, 122, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Responsive Düzenlemeler */
+@media screen and (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .project-image {
+        height: 180px;
+    }
+    
+    .project-info {
+        padding: 1.2rem;
+    }
+    
+    .project-info h4 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Animasyonlar */
+@keyframes projectCardShow {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-card {
+    animation: projectCardShow 0.5s ease forwards;
+}
+
+.project-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+/* Makale kartı için özel stiller */
+.article-showcase {
+    margin-top: 2rem;
+}
+
+.article-showcase .project-card {
+    margin: 0;
+    background: rgba(45, 50, 80, 0.5);
+}
+
+.article-link-container {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.article-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: linear-gradient(
+        45deg,
+        var(--highlight-color) 0%,
+        rgba(246, 177, 122, 0.8) 100%
+    );
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(246, 177, 122, 0.2);
+}
+
+.article-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(246, 177, 122, 0.3);
+    background: linear-gradient(
+        45deg,
+        var(--highlight-color) 0%,
+        rgba(246, 177, 122, 0.9) 100%
+    );
+}
+
+.article-link i {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.article-link:hover i {
+    transform: translateX(5px);
+}
+
+/* Mobil için düzenleme */
+@media screen and (max-width: 768px) {
+    .article-link {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 20px;
+    }
+}
+
+/* Proje kartları için genel stiller */
+.project-card {
+    background: rgba(45, 50, 80, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(112, 119, 161, 0.2);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--highlight-color);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-info h4 {
+    color: var(--highlight-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-info p {
+    color: var(--text-color-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 1rem;
+}
+
+.project-tags span {
+    background: rgba(246, 177, 122, 0.1);
+    color: var(--highlight-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(246, 177, 122, 0.2);
+    transition: all 0.3s ease;
+}
+
+.project-tags span:hover {
+    background: rgba(246, 177, 122, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Görüntüle butonu stilleri */
+.view-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 12px 24px;
+    background: linear-gradient(45deg, var(--highlight-color), var(--accent-color));
+    border: none;
+    border-radius: 8px;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(246, 177, 122, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.view-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--accent-color), var(--highlight-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.view-button:hover::before {
+    opacity: 1;
+}
+
+.view-button span,
+.view-button i {
+    position: relative;
+    z-index: 1;
+}
+
+.view-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(246, 177, 122, 0.3);
+}
+
+.view-button i {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.view-button:hover i {
+    transform: translateX(5px);
+}
+
+.view-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(246, 177, 122, 0.2);
+}
+
+/* Mobil için düzenleme */
+@media screen and (max-width: 768px) {
+    .view-button {
+        padding: 14px 20px;
+        font-size: 0.9rem;
+    }
+}
